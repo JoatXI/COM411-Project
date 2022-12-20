@@ -38,8 +38,10 @@ def error(msg):
     :param msg: a string containing an error message
     :return: does not return anything
     """
-    # TODO: Your code here
-    pass # can remove
+    error_msg = f"Error! {msg}."
+    print(error_msg)
+    
+    return
 
 
 def progress(operation, value):
@@ -60,8 +62,16 @@ def progress(operation, value):
     :param value: an integer indicating the amount of progress made
     :return: does not return anything
     """
-    # TODO: Your code here
-    pass # can remove
+    if value == 0:
+        status = 'initiated'
+    elif value > 0 and value < 100:
+        status = f"in progress ({value}% completed)"
+    elif value == 100:
+        status = "completed"
+        
+    print(f"Operation: {operation} [{status}]")
+    
+    return
 
 
 def main_menu():
@@ -229,3 +239,5 @@ def display_reviews():
     pass # can remove
 
 welcome()
+error("Incorrect input")
+progress("is", 45)
