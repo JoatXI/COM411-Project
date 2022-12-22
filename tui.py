@@ -19,12 +19,10 @@ def welcome():
 
     :return: Does not return anything.
     """
-    title = "Hotel reviews"
-    print("-" * len(title))
-    print(f"\n{title}\n")
-    print("-" * len(title))
-    
-    return
+    output = f"Hotel Reviews"
+    lines = len(output)
+    dashes = "-" * lines
+    print(f"{dashes}\n{output}\n")
 
 
 def error(msg):
@@ -38,10 +36,7 @@ def error(msg):
     :param msg: a string containing an error message
     :return: does not return anything
     """
-    error_msg = f"Error! {msg}."
-    print(error_msg)
-    
-    return
+    print(f"Error! {msg}\n")
 
 
 def progress(operation, value):
@@ -62,16 +57,7 @@ def progress(operation, value):
     :param value: an integer indicating the amount of progress made
     :return: does not return anything
     """
-    if value == 0:
-        status = 'initiated'
-    elif value > 0 and value < 100:
-        status = f"in progress ({value}% completed)"
-    elif value == 100:
-        status = "completed"
-        
-    print(f"Operation: {operation} [{status}]")
-    
-    return
+    print(f"Progress: {operation} [{status}]\n")
 
 
 def main_menu():
@@ -91,18 +77,10 @@ def main_menu():
 
     :return: an integer for a valid selection
     """
-    print("[1] Process Data [2] Visualise Data [3] Export Data [4] Exit")
-    select = input("Select option: ")
-    if select == "Process Data":
-        return 1
-    elif select == "Visual Data":
-        return 2
-    elif select == "Export Data":
-        return 3
-    elif select == "Exit":
-        return 4
-    else:
-        print("Invalid input")
+    print(f"""Please select one of the following options:
+    [1] Process Data [2] Visualise Data [3] Export Data [4] Exit""")
+    selection = int(input("Select an option number: "))
+    return selection
 
 
 def sub_menu(variant=0):
@@ -133,21 +111,9 @@ def sub_menu(variant=0):
 
     :return: 0 if invalid selection otherwise an integer for a valid selection
     """
-    if variant == 0:
-        print("Invalid input")
-        return 0
-    elif variant == 1:
-        print("[1] Reviews for Hotel [2] Reviews for Dates [3] Reviews for Nationality [4] Reviews Summary")
-        return 1
-    elif variant == 2:
-        print("[1] Positive/Negative Pie Chart [2] Reviews Per Nationality Chart [3] Animated Summary")
-        return 2
-    elif variant == 3:
-        print("[1] All Reviews [2] Reviews for Specific Hotel")
-        return 3
-    else:
-        print("Invalid input")
-        return 0
+    print(f"Please select one of the following options:")
+    selection = int(input("Select an option number: "))
+    return selection
     
 
 def total_reviews(num_reviews):
@@ -164,7 +130,6 @@ def total_reviews(num_reviews):
     :return: Does not return anything
     """
     print(f"There are {num_reviews} reviews in the data set")
-    return
 
 
 def hotel_name():
@@ -225,20 +190,10 @@ def display_review(review, cols=None):
     :param cols: A list of integer values that represent column indexes
     :return: Does not return anything
     """
-    feedback = ["10/08/2016", "K K Hotel George", "United Kingdom,The bed mattress was too hard without the mattress topper on which we removed because it made us hot The mattress was orthopaedic firm", "Staff were very helpful", "7.9", "1", "[' Leisure trip ', ' Couple ', ' Classic Double Room ', ' Stayed 2 nights ', ' Submitted from a mobile device ']", "299 day"]
+    print(f"{review}")
     
-    print(feedback)
-    
-    if cols == [1,3]:
-        print(review)
-    elif cols == [0,1,5]:
-        print(review)
-    else:
-        print(review)
-    return
 
-
-def display_reviews():
+def display_reviews(reviews, cols=None):
     """
     Task 10: Display each review in the specified list of reviews.
     
@@ -267,6 +222,4 @@ def display_reviews():
     :param cols: A list of integer values that represent column indexes
     :return: Does not return anything
     """
-    # TODO: Your code here
-    pass # can remove
-
+    print(f"{reviews}")
