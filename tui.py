@@ -83,8 +83,7 @@ def main_menu():
 
     :return: an integer for a valid selection
     """
-    print(f"""Please select one of the following options:
-    [1] Process Data [2] Visualise Data [3] Export Data [4] Exit""")
+    print(f"""Please select one of the following options:\n[1] Process Data [2] Visualise Data [3] Export Data [4] Exit""")
     selection = int(input("Select an option number: "))
     return selection
 
