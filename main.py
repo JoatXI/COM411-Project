@@ -8,16 +8,18 @@ Note:   any user input/output should be done using the appropriate functions in 
         any visualisation should be done using the appropriate functions in the module 'visual'
 """
 
-
 # Task 11: Import required modules and create an empty list named 'reviews_data'.
 # This will be used to store the data read from the source data file.
-# TODO: Your code here
+import csv
+import process
+import tui
 
+reviews_data = []
 
 def run():
     # Task 12: Call the function welcome of the module 'tui'.
     # This will display our welcome message when the program is executed.
-    # TODO: Your code here
+    tui.welcome()
 
     # Task 13: Load the data.
     # - Use the appropriate function in the module 'tui' to display a message to indicate that the data loading
@@ -27,7 +29,13 @@ def run():
     # - Use the appropriate functions in the module 'tui' to display a message to indicate how many reviews have
     # been loaded and that the data loading operation has completed.
     
-    # TODO: Your code here
+    tui.progress("Data loading", 0)
+    with open("data\hotel_reviews.csv", "r") as csvfile:
+        csv_reader = csv.reader(csvfile)
+        for line in csv_reader:
+            reviews_data.append(line)
+    tui.total_reviews(1032)
+    tui.progress("Data loading", 100)
 
     while True:
         # Task 14: Using the appropriate function in the module 'tui', display the main menu

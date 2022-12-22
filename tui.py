@@ -22,7 +22,7 @@ def welcome():
     output = f"Hotel Reviews"
     lines = len(output)
     dashes = "-" * lines
-    print(f"{dashes}\n{output}\n")
+    print(f"{dashes}\n{output}\n{dashes}")
 
 
 def error(msg):
@@ -57,7 +57,13 @@ def progress(operation, value):
     :param value: an integer indicating the amount of progress made
     :return: does not return anything
     """
-    print(f"Progress: {operation} [{status}]\n")
+    if value == 0:
+        status = f"initiated"
+    elif value > 0 and value < 100:
+        status = f"in progress ({value}% completed)"
+    elif value == 100:
+        status = f"completed"
+    print(f"\nProgress: {operation} [{status}]\n")
 
 
 def main_menu():
@@ -129,7 +135,7 @@ def total_reviews(num_reviews):
     :param num_reviews: the total number of reviews in the data set
     :return: Does not return anything
     """
-    print(f"There are {num_reviews} reviews in the data set")
+    print(f"\nThere are {num_reviews} reviews in the data set")
 
 
 def hotel_name():
