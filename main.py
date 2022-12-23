@@ -91,6 +91,10 @@ def run():
             tui.progress("Data processing", 0)
             tui.progress("Data processing", 100)
             tui.sub_menu(1)
+            if user_selection == 1:
+                tui.progress("Review retrieval process", 0)
+                
+                tui.progress("Review retrieval process", 100)
 
         # Task 21: Check if the user selected the option for visualising data.
         # If so, then do the following:
