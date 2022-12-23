@@ -40,7 +40,7 @@ def run():
     while True:
         # Task 14: Using the appropriate function in the module 'tui', display the main menu
         # Assign the value returned from calling the function to a suitable local variable
-        tui.main_menu()
+        user_selection = tui.main_menu()
 
         # Task 15: Check if the user selected the option for processing data.  If so, then do the following:
         # - Use the appropriate function in the module tui to display a message to indicate that the data processing
@@ -87,7 +87,9 @@ def run():
         #       - Use your function in the module 'tui' to display the summary
         #       - Use the appropriate function in the module 'tui' to indicate that the summary
         #       process has completed.
-        # TODO: Your code here
+        if user_selection == 1:
+            tui.progress("Data processing", 0)
+            tui.sub_menu(1)
 
         # Task 21: Check if the user selected the option for visualising data.
         # If so, then do the following:

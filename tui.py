@@ -116,9 +116,18 @@ def sub_menu(variant=0):
 
     :return: 0 if invalid selection otherwise an integer for a valid selection
     """
-    print(f"Please select one of the following options:")
+    if variant == 1:
+        print(f"""Please select one of the following options:\n[1] Reviews for Hotel [2] Reviews for Dates [3] Reviews for Nationality
+    [4] Reviews Summary""")
+    elif variant == 2:
+        print(f"""Please select one of the following options:\n[1] Positive/Negative Pie Chart [2] Reviews Per Nationality Chart [3] Animated Summary""")
+    elif variant == 3:
+        print(f"""Please select one of the following options:\n[1] All Reviews [2] Reviews for Specific Hotel""")
     selection = int(input("Select an option number: "))
-    return selection
+    if selection >= 1 and selection <= 3:
+        return selection
+    else:
+        return 0
     
 
 def total_reviews(num_reviews):
