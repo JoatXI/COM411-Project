@@ -36,9 +36,11 @@ def name_retrieval(reviews_data):
          
 def dates_retrieval(reviews_data):
     user_date = tui.review_dates()
-    for line in reviews_data:
-        if user_date in line:
-            print(line)
+    i = [x[0] for x in reviews_data]
+    if user_date in i:
+        for x in range(0,len(reviews_data)):
+            if user_date == reviews_data[x][0]:
+                print(reviews_data[x])
     
 def nationality_retrieval(reviews_data):
     tui.display_reviews(reviews_data, reviews_data[2])

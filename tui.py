@@ -193,7 +193,7 @@ def review_dates():
 
     :return: a list of review dates
     """
-    dates = [input("Enter review dates: ")]
+    dates = input("Enter review dates: ")
     return dates
 
 
@@ -286,7 +286,7 @@ def display_summary(reviews_data):
     index1 = 3
     index2 = 4
     index3 = 5
-    sum_review = {"negative_reviews": 0, "positive_reviews": 0, "average_rating": int("")}
+    sum_review = {"negative_reviews": 0, "positive_reviews": 0, "average_rating": float("")}
     for review in reviews_data:
         count = review[index1]
         count2 = review[index2]
