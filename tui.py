@@ -249,4 +249,23 @@ def display_reviews(reviews, cols=None):
     :param cols: A list of integer values that represent column indexes
     :return: Does not return anything
     """
-    print(f"{reviews}")
+    if cols == 0:        
+        print(f"{reviews[0]}")
+    elif cols == 1:
+        print(f"{reviews[1]}")
+    elif cols == 2:
+        print(f"{reviews[2]}")
+    elif cols == 3:
+        print(f"{reviews[3]}")
+    elif cols == 4:
+        print(f"{reviews[4]}")
+    elif cols == 5:
+        print(f"{reviews[5]}")
+    elif cols == 6:
+        print(f"{reviews[6]}")
+    elif cols == 7:
+        print(f"{reviews[7]}")
+    elif cols == 8:
+        print(f"{reviews[8]}")
+    else:
+        print(f"{reviews}")

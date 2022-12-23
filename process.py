@@ -22,5 +22,13 @@ The required functions are as follows:
     - the total number of positive reviews on that date
     - the average rating on that date
 """
+import tui
 
-# TODO: Your code here
+def retrieve_total():
+    tui.total_reviews(1032)
+    
+def retrieve_name():
+    user_name = tui.hotel_name()
+    
+def retrieve_dates():
+    user_date = tui.review_dates
