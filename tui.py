@@ -6,7 +6,7 @@ A function may also need to format and/or structure a response e.g. return a lis
 Any errors or invalid inputs should be handled appropriately.
 Please note that you do not need to read the data file or perform any other such processing in this module.
 """
-
+from statistics import mean
 
 def welcome():
     """
@@ -84,9 +84,16 @@ def main_menu():
     :return: an integer for a valid selection
     """
     print(f"""Please select one of the following options:\n[1] Process Data [2] Visualise Data [3] Export Data [4] Exit""")
-    selection = int(input("Select an option number: "))
-    if selection >= 1 and selection <= 4:
-        return selection
+    selection = input("Select an option: ")
+    
+    if selection == "process data":
+        return 1
+    elif selection == "visualise data":
+        return 2
+    elif selection == "export data":
+        return 3
+    elif selection == "exit":
+        return 4
     else:
         error("Invalid option")
 
@@ -128,11 +135,16 @@ def sub_menu(variant=0):
     else:
         error("Invalid variant")
         return 0
-    selection = int(input("Select an option number: "))
-    if selection >= 1 and selection <= 3:
-        return selection
-    elif selection == 4:
-        return selection
+    selection = input("Select an option: ")
+    
+    if selection == "reviews for hotel":
+        return 1
+    elif selection == "reviews for dates":
+        return 2
+    elif selection == "reviews for nationality":
+        return 3
+    elif selection == "reviews summary":
+        return 4
     else:
         error("Invalid option")
         return 0
@@ -269,3 +281,20 @@ def display_reviews(reviews, cols=None):
         print(f"{reviews[8]}")
     else:
         print(f"{reviews}")
+        
+def display_summary(reviews_data):
+    index1 = 3
+    index2 = 4
+    index3 = 5
+    sum_review = {"negative_reviews": 0, "positive_reviews": 0, "average_rating": int("")}
+    for review in reviews_data:
+        count = review[index1]
+        count2 = review[index2]
+        count3 = review[index3]
+        if count in reviews_data:
+            sum_review["negative_reviews"] += 1
+        elif count2 in reviews_data:
+            sum_review["positive_reviews"] += 1
+        elif count3 in reviews_data:
+            sum_review["average_rating"] = mean(count3)
+    print(f"{sum_review}")

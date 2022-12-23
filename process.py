@@ -30,13 +30,15 @@ def total_retrieval(reviews_data):
     
 def name_retrieval(reviews_data):
     user_name = tui.hotel_name()
-    for user_name in reviews_data:
-        print(f"{user_name}")
+    for line in reviews_data:
+        if user_name in line:
+            print(line)
          
 def dates_retrieval(reviews_data):
     user_date = tui.review_dates()
-    for user_date in reviews_data:
-        return user_date
+    for line in reviews_data:
+        if user_date in line:
+            print(line)
     
 def nationality_retrieval(reviews_data):
     tui.display_reviews(reviews_data, 2)
@@ -56,4 +58,4 @@ def summary(reviews_data):
             sum_review["positive_reviews"] += 1
         elif count3 in reviews_data:
             sum_review["average_rating"] = mean(count3)
-    tui.total_reviews(sum_review)
+    return sum_review

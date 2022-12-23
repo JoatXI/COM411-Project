@@ -91,11 +91,26 @@ def run():
         if user_selection == 1:
             tui.progress("Data processing", 0)
             tui.progress("Data processing", 100)
-            tui.sub_menu(1)
-            if user_selection == 1:
+            new_selection = tui.sub_menu(1)
+            if new_selection == 1:
                 tui.progress("Review retrieval process", 0)
-                
+                process.name_retrieval(reviews_data)
                 tui.progress("Review retrieval process", 100)
+            elif new_selection == 2:
+                tui.progress("Review retrieval process", 0)
+                process.dates_retrieval(reviews_data)
+                tui.progress("Review retrieval process", 100)
+            elif new_selection == 3:
+                tui.progress("Review retrieval process", 0)
+                process.nationality_retrieval(reviews_data)
+                tui.progress("Review retrieval process", 100)
+            elif new_selection == 4:
+                tui.progress("Review retrieval process", 0)
+                process.summary(reviews_data)
+                tui.display_summary(reviews_data)
+                tui.progress("Review retrieval process", 100)
+            else:
+                tui.error("Invalid input")
 
         # Task 21: Check if the user selected the option for visualising data.
         # If so, then do the following:
