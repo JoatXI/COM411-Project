@@ -41,21 +41,19 @@ def dates_retrieval(reviews_data):
             print(line)
     
 def nationality_retrieval(reviews_data):
-    tui.display_reviews(reviews_data, 2)
+    tui.display_reviews(reviews_data, reviews_data[2])
     
 def summary(reviews_data):
     index1 = 3
     index2 = 4
-    index3 = 5
-    sum_review = {"negative_reviews": 0, "positive_reviews": 0, "average_rating": ""}
+    #index3 = 5
+    sum_review = {"negative_reviews": 0, "positive_reviews": 0}
     for review in reviews_data:
         count = review[index1]
         count2 = review[index2]
-        count3 = review[index3]
+        #count3 = review[index3]
         if count in reviews_data:
             sum_review["negative_reviews"] += 1
         elif count2 in reviews_data:
             sum_review["positive_reviews"] += 1
-        elif count3 in reviews_data:
-            sum_review["average_rating"] = mean(count3)
     return sum_review
