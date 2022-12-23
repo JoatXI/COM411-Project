@@ -23,12 +23,25 @@ The required functions are as follows:
     - the average rating on that date
 """
 import tui
+from statistics import mean
 
-def retrieve_total():
-    tui.total_reviews(1032)
+def total_retrieval(reviews_data):
+    tui.total_reviews(len(reviews_data))
     
-def retrieve_name():
+def name_retrieval(reviews_data):
     user_name = tui.hotel_name()
+    for user_name in reviews_data:
+        print(f"{user_name}")
+        
     
-def retrieve_dates():
+def dates_retrieval(reviews_data):
     user_date = tui.review_dates
+    return user_date
+    
+def nationality_retrieval(reviews_data):
+    tui.display_reviews
+    
+def summary():
+    pass
+
+my_list = ["10/08/2016,K K Hotel George,United Kingdom,The bed mattress was too hard without the mattress topper on which we removed because it made us hot The mattress was orthopaedic firm,Staff were very helpful,7.9,1,[' Leisure trip ', ' Couple ', ' Classic Double Room ', ' Stayed 2 nights ', ' Submitted from a mobile device '],299 day", "04/05/2017,Apex Temple Court Hotel,United Kingdom,A few more little milks maybe as I drink a lot of tea but I was given a little jug of milk when I asked,The bathroom was light pleasant and very clean The wardrobe space was good and there were tea making facilities The bed was comfortable,10,2,[' Leisure trip ', ' Couple ', ' City King Room ', ' Stayed 4 nights ', ' Submitted from a mobile device '],120 day", "01/04/2017,Apex Temple Court Hotel,United Kingdom,No Negative,Large bathroom with great elemis toiletries comfortable and king size bed,9.2,4,[' Leisure trip ', ' Solo traveler ', ' Superior King Room with Balcony ', ' Stayed 1 night '],211 day"]

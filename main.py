@@ -32,9 +32,10 @@ def run():
     tui.progress("Data loading", 0)
     with open("data\hotel_reviews.csv", "r") as csvfile:
         csv_reader = csv.reader(csvfile)
+        next(csv_reader)
         for line in csv_reader:
             reviews_data.append(line)
-    tui.total_reviews(1032)
+    tui.total_reviews(len(reviews_data))
     tui.progress("Data loading", 100)
 
     while True:
