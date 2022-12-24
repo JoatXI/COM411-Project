@@ -24,6 +24,7 @@ The required functions are as follows:
 """
 import tui
 from statistics import mean
+from decimal import Decimal as D
 
 def total_retrieval(reviews_data):
     tui.total_reviews(len(reviews_data))
@@ -43,19 +44,19 @@ def dates_retrieval(reviews_data):
                 print(reviews_data[x])
     
 def nationality_retrieval(reviews_data):
-    tui.display_reviews(reviews_data, reviews_data[2])
+    tui.display_reviews(reviews_data, 2)
     
 def summary(reviews_data):
-    index1 = 3
-    index2 = 4
-    #index3 = 5
-    sum_review = {"negative_reviews": 0, "positive_reviews": 0}
-    for review in reviews_data:
-        count = review[index1]
-        count2 = review[index2]
-        #count3 = review[index3]
-        if count in reviews_data:
-            sum_review["negative_reviews"] += 1
-        elif count2 in reviews_data:
-            sum_review["positive_reviews"] += 1
-    return sum_review
+    negative_reviews =  0
+    positive_reviews = 0
+    average_rating = 0
+    
+    for index in reviews_data:
+        average_rating += int(float(index[5]))
+        average = mean([D(average_rating)])
+        if index[3] != "":
+            negative_reviews += 1
+        if index[4] != "":
+            positive_reviews += 1
+        
+    print(f"Negative reviews: {negative_reviews}, Positive reviews: {positive_reviews}, Average rating: {average}")

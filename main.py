@@ -107,7 +107,7 @@ def run():
             elif new_selection == 4:
                 tui.progress("Review retrieval process", 0)
                 process.summary(reviews_data)
-                tui.display_summary(reviews_data)
+                #tui.display_summary(reviews_data)
                 tui.progress("Review retrieval process", 100)
             else:
                 tui.error("Invalid input")

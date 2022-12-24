@@ -261,32 +261,34 @@ def display_reviews(reviews, cols=None):
     :param cols: A list of integer values that represent column indexes
     :return: Does not return anything
     """
-    if cols == 0:        
-        print(f"{reviews[0]}")
-    elif cols == 1:
-        print(f"{reviews[1]}")
-    elif cols == 2:
-        print(f"{reviews[2]}")
-    elif cols == 3:
-        print(f"{reviews[3]}")
-    elif cols == 4:
-        print(f"{reviews[4]}")
-    elif cols == 5:
-        print(f"{reviews[5]}")
-    elif cols == 6:
-        print(f"{reviews[6]}")
-    elif cols == 7:
-        print(f"{reviews[7]}")
-    elif cols == 8:
-        print(f"{reviews[8]}")
-    else:
-        print(f"{reviews}")
+    for index in range(len(reviews)):
+        review = reviews[index]
+        if cols == 0:        
+            print(f"{review[0]}")
+        elif cols == 1:
+            print(f"{review[1]}")
+        elif cols == 2:
+            print(f"{review[2]}")
+        elif cols == 3:
+            print(f"{review[3]}")
+        elif cols == 4:
+            print(f"{review[4]}")
+        elif cols == 5:
+            print(f"{review[5]}")
+        elif cols == 6:
+            print(f"{review[6]}")
+        elif cols == 7:
+            print(f"{review[7]}")
+        elif cols == 8:
+            print(f"{review[8]}")
+        else:
+            print(f"{review}")
         
 def display_summary(reviews_data):
     index1 = 3
     index2 = 4
     index3 = 5
-    sum_review = {"negative_reviews": 0, "positive_reviews": 0, "average_rating": float("")}
+    sum_review = {"negative_reviews": 0, "positive_reviews": 0, "average_rating": 0}
     for review in reviews_data:
         count = review[index1]
         count2 = review[index2]
