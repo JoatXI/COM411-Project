@@ -49,14 +49,15 @@ def nationality_retrieval(reviews_data):
 def summary(reviews_data):
     negative_reviews =  0
     positive_reviews = 0
-    average_rating = 0
+    average = []
     
     for index in reviews_data:
-        average_rating += int(float(index[5]))
-        average = mean([D(average_rating)])
+        if index[5] != "":
+            average.append(float(index[5]))
         if index[3] != "":
             negative_reviews += 1
         if index[4] != "":
             positive_reviews += 1
-        
-    print(f"Negative reviews: {negative_reviews}, Positive reviews: {positive_reviews}, Average rating: {average}")
+            
+    average_rating = sum(average)/len(average)
+    return negative_reviews, positive_reviews, round(average_rating,1)

@@ -7,6 +7,7 @@ Any errors or invalid inputs should be handled appropriately.
 Please note that you do not need to read the data file or perform any other such processing in this module.
 """
 from statistics import mean
+import process
 
 def welcome():
     """
@@ -285,18 +286,5 @@ def display_reviews(reviews, cols=None):
             print(f"{review}")
         
 def display_summary(reviews_data):
-    index1 = 3
-    index2 = 4
-    index3 = 5
-    sum_review = {"negative_reviews": 0, "positive_reviews": 0, "average_rating": 0}
-    for review in reviews_data:
-        count = review[index1]
-        count2 = review[index2]
-        count3 = review[index3]
-        if count in reviews_data:
-            sum_review["negative_reviews"] += 1
-        elif count2 in reviews_data:
-            sum_review["positive_reviews"] += 1
-        elif count3 in reviews_data:
-            sum_review["average_rating"] = mean(count3)
-    print(f"{sum_review}")
+    negative, positive, avg =  process.summary(reviews_data)
+    print(f"Negative reviews: {negative}, Positive reviews: {positive}, Average rating: {avg}")
