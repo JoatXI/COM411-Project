@@ -6,7 +6,6 @@ A function may also need to format and/or structure a response e.g. return a lis
 Any errors or invalid inputs should be handled appropriately.
 Please note that you do not need to read the data file or perform any other such processing in this module.
 """
-from statistics import mean
 import process
 
 def welcome():
@@ -129,25 +128,45 @@ def sub_menu(variant=0):
     """
     if variant == 1:
         print(f"""Please select one of the following options:\n[1] Reviews for Hotel [2] Reviews for Dates [3] Reviews for Nationality [4] Reviews Summary""")
+        selection = input("Select an option: ")
+    
+        if selection == "reviews for hotel":
+            return 1
+        elif selection == "reviews for dates":
+            return 2
+        elif selection == "reviews for nationality":
+            return 3
+        elif selection == "reviews summary":
+            return 4
+        else:
+            error("Invalid option")
+            return 0
     elif variant == 2:
         print(f"""Please select one of the following options:\n[1] Positive/Negative Pie Chart [2] Reviews Per Nationality Chart [3] Animated Summary""")
+        selection = input("Select an option: ")
+    
+        if selection == "positive/negative Pie chart":
+            return 1
+        elif selection == "reviews per nationality chart":
+            return 2
+        elif selection == "animated summary":
+            return 3
+        else:
+            error("Invalid option")
+            return 0
     elif variant == 3:
         print(f"""Please select one of the following options:\n[1] All Reviews [2] Reviews for Specific Hotel""")
+        selection = input("Select an option: ")
+    
+        if selection == "all reviews":
+            return 1
+        elif selection == "reviews for specific hotel":
+            return 2
+        else:
+            error("Invalid option")
+            return 0
     else:
         error("Invalid variant")
-        return 0
-    selection = input("Select an option: ")
-    
-    if selection == "reviews for hotel":
-        return 1
-    elif selection == "reviews for dates":
-        return 2
-    elif selection == "reviews for nationality":
-        return 3
-    elif selection == "reviews summary":
-        return 4
-    else:
-        error("Invalid option")
         return 0
     
 
@@ -287,4 +306,4 @@ def display_reviews(reviews, cols=None):
         
 def display_summary(reviews_data):
     negative, positive, avg =  process.summary(reviews_data)
-    print(f"Negative reviews: {negative}, Positive reviews: {positive}, Average rating: {avg}")
+    print(f"Total Negative reviews: {negative}, Total Positive reviews: {positive}, Average rating: {avg}")

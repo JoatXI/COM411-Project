@@ -109,8 +109,6 @@ def run():
                 process.summary(reviews_data)
                 tui.display_summary(reviews_data)
                 tui.progress("Review retrieval process", 100)
-            else:
-                tui.error("Invalid input")
 
         # Task 21: Check if the user selected the option for visualising data.
         # If so, then do the following:

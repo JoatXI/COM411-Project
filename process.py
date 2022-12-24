@@ -23,8 +23,6 @@ The required functions are as follows:
     - the average rating on that date
 """
 import tui
-from statistics import mean
-from decimal import Decimal as D
 
 def total_retrieval(reviews_data):
     tui.total_reviews(len(reviews_data))
