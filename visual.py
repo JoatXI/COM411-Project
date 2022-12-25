@@ -45,6 +45,27 @@ def num_of_reviews(reviews_data):
             else:
                 i[j] = 1
         return i
-    print(getting_total(national))
+    labels = ["UK: 456", "USA: 78", "Australia: 51", "Ireland: 38", "Saudi Arabia: 23", "Netherlands: 21", "Germany: 20", "UAE: 18", "France: 17", "Canada: 16", "Israel: 16", "Italy: 15", "Turkey: 15", "Belgium: 13", "Greece: 11", "Spain: 10", "Others: 212"]
+    sizes = [456, 78, 51, 38, 23, 21, 20, 18, 17, 16, 16, 15, 15, 13, 11, 10, 212]
+
+    plt.figure(figsize=(10,10))
+    plt.pie(sizes, labels=labels, textprops={"fontsize":7})
+    #plt.title(label="Number of reviews by the nationality of a reviewer", fontdict={"fontsize":16}, pad=20)
+    plt.show()
+    #print(getting_total(national))
+
+def animate(reviews_data):
+    negative_reviews =  0
+    positive_reviews = 0
+    average = []
+    
+    for index in reviews_data:
+        if index[5] != "":
+            average.append(float(index[5]))
+        if index[3] != "No Negative":
+            negative_reviews += 1
+        if index[4] != "No Positive":
+            positive_reviews += 1
+
     
 national = []
