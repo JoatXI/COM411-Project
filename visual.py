@@ -34,4 +34,17 @@ def pie_chart(reviews_data):
     plt.show()
 
 def num_of_reviews(reviews_data):
-    pass
+    def getting_total(k):
+        i = {}
+        for index in reviews_data:
+            if index[2] != "":
+                national.append(index[2])
+        for j in k:
+            if j in i:
+                i[j] += 1
+            else:
+                i[j] = 1
+        return i
+    print(getting_total(national))
+    
+national = []

@@ -125,6 +125,8 @@ def run():
             visual_selection = tui.sub_menu(2)
             if visual_selection == 1:
                 visual.pie_chart(reviews_data)
+            elif visual_selection == 2:
+                visual.num_of_reviews(reviews_data)
             tui.progress("Data Visualisation", 100)
                   
         # Task 25: Check if the user selected the option for exporting reviews.  If so, then do the following:

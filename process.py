@@ -52,9 +52,9 @@ def summary(reviews_data):
     for index in reviews_data:
         if index[5] != "":
             average.append(float(index[5]))
-        if index[3] != "":
+        if index[3] != "No Negative":
             negative_reviews += 1
-        if index[4] != "":
+        if index[4] != "No Positive":
             positive_reviews += 1
             
     average_rating = sum(average)/len(average)
