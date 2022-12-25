@@ -67,5 +67,7 @@ def animate(reviews_data):
         if index[4] != "No Positive":
             positive_reviews += 1
 
+    average_rating = sum(average)/len(average)
+    print(f"Negaftive Reviews: {negative_reviews}", f"Positive Reviews: {positive_reviews}", round({average_rating},1))
     
 national = []
