@@ -12,6 +12,7 @@ Task 22 - 24: Write suitable functions to visualise the data as follows:
 Each function should visualise the data using Matplotlib.
 """
 import matplotlib.pyplot as plt
+import matplotlib.animation as animation
 import tui
 
 def pie_chart(reviews_data):
@@ -52,7 +53,7 @@ def num_of_reviews(reviews_data):
     plt.pie(sizes, labels=labels, textprops={"fontsize":7})
     #plt.title(label="Number of reviews by the nationality of a reviewer", fontdict={"fontsize":16}, pad=20)
     plt.show()
-    #print(getting_total(national))
+    print(getting_total(national))
 
 def animate(reviews_data):
     negative_reviews =  0
