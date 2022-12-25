@@ -83,7 +83,7 @@ def main_menu():
 
     :return: an integer for a valid selection
     """
-    print(f"""Please select one of the following options:\n[1] Process Data [2] Visualise Data [3] Export Data [4] Exit""")
+    print(f"""\nPlease select one of the following options:\n\n[1] Process Data [2] Visualise Data [3] Export Data [4] Exit\n""")
     selection = input("Select an option: ")
     
     if selection == "process data":
@@ -127,7 +127,7 @@ def sub_menu(variant=0):
     :return: 0 if invalid selection otherwise an integer for a valid selection
     """
     if variant == 1:
-        print(f"""Please select one of the following options:\n[1] Reviews for Hotel [2] Reviews for Dates [3] Reviews for Nationality [4] Reviews Summary""")
+        print(f"""\nPlease select one of the following options:\n\n[1] Reviews for Hotel [2] Reviews for Dates [3] Reviews for Nationality [4] Reviews Summary\n""")
         selection = input("Select an option: ")
     
         if selection == "reviews for hotel":
@@ -142,10 +142,10 @@ def sub_menu(variant=0):
             error("Invalid option")
             return 0
     elif variant == 2:
-        print(f"""Please select one of the following options:\n[1] Positive/Negative Pie Chart [2] Reviews Per Nationality Chart [3] Animated Summary""")
+        print(f"""\nPlease select one of the following options:\n\n[1] Positive/Negative Pie Chart [2] Reviews Per Nationality Chart [3] Animated Summary\n""")
         selection = input("Select an option: ")
     
-        if selection == "positive/negative Pie chart":
+        if selection == "positive/negative pie chart":
             return 1
         elif selection == "reviews per nationality chart":
             return 2
@@ -155,7 +155,7 @@ def sub_menu(variant=0):
             error("Invalid option")
             return 0
     elif variant == 3:
-        print(f"""Please select one of the following options:\n[1] All Reviews [2] Reviews for Specific Hotel""")
+        print(f"""\nPlease select one of the following options:\n\n[1] All Reviews [2] Reviews for Specific Hotel\n""")
         selection = input("Select an option: ")
     
         if selection == "all reviews":
@@ -183,7 +183,7 @@ def total_reviews(num_reviews):
     :param num_reviews: the total number of reviews in the data set
     :return: Does not return anything
     """
-    print(f"\nThere are {num_reviews} reviews in the data set")
+    print(f"There are {num_reviews} reviews in the data set")
 
 
 def hotel_name():

@@ -13,6 +13,7 @@ Note:   any user input/output should be done using the appropriate functions in 
 import csv
 import process
 import tui
+import visual
 
 reviews_data = []
 
@@ -90,25 +91,25 @@ def run():
         #       process has completed.
         if user_selection == 1:
             tui.progress("Data processing", 0)
-            tui.progress("Data processing", 100)
-            new_selection = tui.sub_menu(1)
-            if new_selection == 1:
+            pro_selection = tui.sub_menu(1)
+            if pro_selection == 1:
                 tui.progress("Review retrieval process", 0)
                 process.name_retrieval(reviews_data)
                 tui.progress("Review retrieval process", 100)
-            elif new_selection == 2:
+            elif pro_selection == 2:
                 tui.progress("Review retrieval process", 0)
                 process.dates_retrieval(reviews_data)
                 tui.progress("Review retrieval process", 100)
-            elif new_selection == 3:
+            elif pro_selection == 3:
                 tui.progress("Review retrieval process", 0)
                 process.nationality_retrieval(reviews_data)
                 tui.progress("Review retrieval process", 100)
-            elif new_selection == 4:
+            elif pro_selection == 4:
                 tui.progress("Review retrieval process", 0)
                 process.summary(reviews_data)
                 tui.display_summary(reviews_data)
                 tui.progress("Review retrieval process", 100)
+            tui.progress("Data processing", 100)
 
         # Task 21: Check if the user selected the option for visualising data.
         # If so, then do the following:
@@ -119,8 +120,13 @@ def run():
         #   - call the appropriate function in the module 'visual' to display the visual
         # - Use the appropriate function in the module 'tui' to display a message to indicate that the
         # data visualisation operation has completed.
-        # TODO: Your code here
-        
+        if user_selection == 2:
+            tui.progress("Data Visualisation", 0)
+            visual_selection = tui.sub_menu(2)
+            if visual_selection == 1:
+                visual.pie_chart(reviews_data)
+            tui.progress("Data Visualisation", 100)
+                  
         # Task 25: Check if the user selected the option for exporting reviews.  If so, then do the following:
         # - Use the appropriate function in the module 'tui' to retrieve what reviews are to be exported.
         # - Check what option has been selected
