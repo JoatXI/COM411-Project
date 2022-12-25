@@ -120,13 +120,15 @@ def run():
         #   - call the appropriate function in the module 'visual' to display the visual
         # - Use the appropriate function in the module 'tui' to display a message to indicate that the
         # data visualisation operation has completed.
-        if user_selection == 2:
+        elif user_selection == 2:
             tui.progress("Data Visualisation", 0)
             visual_selection = tui.sub_menu(2)
             if visual_selection == 1:
                 visual.pie_chart(reviews_data)
             elif visual_selection == 2:
                 visual.num_of_reviews(reviews_data)
+            elif visual_selection == 3:
+                visual.animate(reviews_data)
             tui.progress("Data Visualisation", 100)
                   
         # Task 25: Check if the user selected the option for exporting reviews.  If so, then do the following:
@@ -140,17 +142,21 @@ def run():
         # To export the reviews, you should demonstrate the application of OOP principles including the concepts of
         # abstraction and inheritance.  You should create suitable classes with appropriate methods.
         # You should use these to write the reviews (either all or only those for a specific hotel) to a JSON file.
-        # TODO: Your code here
+        elif user_selection == 3:
+            export_selection = tui.sub_menu(3)
+            if export_selection == 1:
+                tui.progress("Export", 0)
+                
 
         # Task 26: Check if the user selected the option for exiting the program.
         # If so, then break out of the loop
-        # TODO: Your code here
+        elif user_selection == 4:
+            break
 
         # Task 27: If the user selected an invalid option then use the appropriate function of the
         # module tui to display an error message
-        # TODO: Your code here
-
-        pass  # can remove
+        else:
+            tui.error("Invalid option")
 
 
 if __name__ == "__main__":

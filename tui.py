@@ -94,8 +94,6 @@ def main_menu():
         return 3
     elif selection == "exit":
         return 4
-    else:
-        error("Invalid option")
 
 
 def sub_menu(variant=0):
